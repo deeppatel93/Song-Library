@@ -45,8 +45,7 @@ public class Controller {
 		public void changed(ObservableValue<? extends Song> observable, Song oldValue, Song newValue){
 			
 			showDetail();
-			//edit();
-			
+			//edit();	
 		}
 		
 	}
@@ -87,8 +86,7 @@ public class Controller {
 	                        a.open();
 	                        for(int i = 0; i < songData.size(); i++){
 	                        	Song add = songData.get(i);
-	                        	a.addSong(add);
-	                        	
+	                        	a.addSong(add);	
 	                        }
 	                        a.close();
 	                        System.exit(0);
@@ -100,11 +98,7 @@ public class Controller {
 		      songList.getSelectionModel().select(0);
 		      showDetail();
 		      
-		     songList
-		      .getSelectionModel()
-		      .selectedItemProperty()
-		      .addListener(
-		    		 listener);
+		     songList.getSelectionModel().selectedItemProperty().addListener(listener);
 
 		}
 		
@@ -121,19 +115,14 @@ public class Controller {
 	    public void functions(ActionEvent e ) {
 			Button b = (Button)e.getSource();
 			if(b==edit) {
-				
 				edit();
-				
-			}else if(b==add){
-							
+			}else if(b==add){	
 				add();
-			
 			}else{
-				
 				delete();
 			}
 
-			}
+		}
 			
 			
 	    
@@ -280,8 +269,8 @@ public class Controller {
 					}else{
 	    	obsList.remove(songList.getSelectionModel().getSelectedIndex());
 	    	songList.getSelectionModel().select(songList.getSelectionModel().getSelectedIndex()+1);
+					}
 				}
-	    	}
 	    	}
 	    }
 	    
@@ -341,9 +330,9 @@ public class Controller {
 	    		alert1.setContentText("Please at least Enter Song Name and Artist");
 	    		alert1.showAndWait();
 			}else{
-			Song toAdd = new Song(nam,art,alb,yea);
+				Song toAdd = new Song(nam,art,alb,yea);
 	    	
-			boolean in = false;
+				boolean in = false;
 		
 				for(int i = 0; i < songData.size(); i++){
 					String a1 = songData.get(i).artist.toLowerCase();
@@ -379,9 +368,9 @@ public class Controller {
 					}
 				
 			}
-			} 
+		} 
 			    	
-			}
+	}
 }
 
 		
